@@ -1,0 +1,395 @@
+/*---共通のCSS---*/
+body {
+    position: relative;
+    overscroll-behavior-y: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header,
+footer {
+    width: 100%;
+}
+
+main {
+    max-width: 1280px;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+
+section {
+    position: relative;
+}
+
+.section_dummy {
+    opacity: 0;
+    position: absolute;
+    top: -135px;
+    width: 100%;
+}
+
+main .section_title {
+    width: 100%;
+}
+
+main .section_title h2 {
+    text-align: center;
+    margin-bottom: 34px;
+    font-size: 41px;
+    color: #142533;
+}
+
+.section_title h2 span {
+    padding-bottom: 4px;
+    display: inline-block;
+    border-bottom: 2px solid #142533;
+}
+
+/*---header*---*/
+header {
+    background-color: rgba(70, 130, 180, 0.8);
+    height: 120px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.header_logo a,
+.header_logo h1 {
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+.header_logo img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+}
+
+.header_inner {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*---nav-list---*/
+.nav_list {
+    display: flex;
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav_list li {
+    margin-right: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav_list li a {
+    display: block;
+    width: 120px;
+    text-decoration: none;
+    line-height: 120px;
+}
+
+.nav_list li a span {
+    position: relative;
+}
+
+/*aタグがhoverされた時に、背景色を変える*/
+.nav_list li a:hover {
+    background-color: rgba(60, 111, 153, 0.6);
+}
+
+/*
+aタグ中の文字に対して下線をつける
+(scaleで幅を指定していないため普段は消えてる)
+*/
+.nav_list li a span::after {
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #284a66;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform .3s;
+}
+
+/*例：aタグをホバーした時、spanタグの擬似要素に対して*/
+.nav_list li a:hover span::after {
+    transform: scale(1, 1);
+}
+
+/*---Topの画像---*/
+.top_img {
+    background-image: url(../img/top.png);
+    background-size: cover;
+    background-position: left;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    min-height: 630px;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+/*---Topページのimg_text---*/
+.top_img_text {
+    font-family: "ヒラギノ角ゴシック", serif;
+    position: absolute;
+    top: 250px;
+    left: 190px;
+    max-width: 100vw;
+    max-height: 100vh;
+    color: #142533;
+}
+
+.top_img_text p {
+    font-size: 2vmax;
+    margin-bottom: 1vmax;
+    font-weight: lighter;
+
+}
+
+.top_img_text p:last-of-type {
+    font-weight: 300;
+    margin-top: 1vmax;
+    font-size: 3vmax;
+    line-height: 5vmax;
+}
+
+/*---Main---*/
+.About_text {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 16px;
+    color: #284a66;
+}
+
+.About_text_box {
+    margin-bottom: 26px;
+}
+
+.About_text_box:last-child {
+    margin-bottom: 60px;
+}
+
+.About_text_box p {
+    margin-bottom: 8px;
+    line-height: 1.2em;
+}
+
+.demo {
+    display: inline-block;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.About_text_box .fun {
+    color: #5094cc;
+    font-size: 20px;
+    display: inline-block;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.About_img {
+    margin-bottom: 60px;
+}
+
+/*---Profile---*/
+.Profile {
+    margin-bottom: 60px;
+}
+
+.Profile_inner {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.Profile .Profile_box figure {
+    max-width: 60%;
+    max-height: 60%;
+    min-width: 30%;
+    min-height: 30%;
+}
+
+.Profile_box {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    align-items: center;
+    align-content: center;
+}
+
+.Profile_box figure {
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.Profile_box figure img {
+    height: 60%;
+    transition-property: transform;
+    transition-duration: 2s;
+
+}
+
+.Profile_box figure img:hover {
+    transform: scale(1.2);
+}
+
+.Profile_text {
+    width: 300px;
+    padding-top: 30px;
+    color: #284a66;
+}
+
+.Profile_text_wrap {
+    margin-bottom: 20px;
+}
+
+.Profile_text_wrap dt {
+    font-size: 20px;
+    line-height: 1em;
+}
+
+.Profile_text_wrap dt {
+    border-bottom: 1px solid #142533;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+
+.Profile_q {
+    font-size: 12px;
+    padding-right: 0;
+    display: block;
+    margin-left: 20px;
+}
+
+.Profile_text_wrap dd {
+    display: block;
+    margin: 5px auto;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.Profile_name:first-line {
+    font-size: 14px;
+}
+
+.hobby {
+    margin-right: 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.game {
+    font-size: 13px;
+}
+
+/*---Hobby---*/
+.Hobby {
+    margin-bottom: 60px;
+}
+
+.Hobby_inner p {
+    width: 100%;
+    text-align: center;
+    font-size: 2vmax;
+    margin-bottom: 40px;
+    color: #284a66;
+}
+
+.Hobby_img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.Hobby_img {
+    display: block;
+    height: 150px;
+    text-decoration: none;
+    color: #284a66;
+    transition: 0.3s;
+}
+
+.Hobby_img:hover {
+    opacity: 0.8;
+}
+
+.Hobby_box {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.Hobby_wrap {
+    width: calc(100%/4);
+    font-size: 12px;
+}
+
+.Hobby_wrap figcaption {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.Hobby_wrap p {
+    margin-top: 30px;
+    font-size: 16px;
+    color: #142533;
+}
+
+/*---Footer---*/
+footer {
+    height: 80px;
+    text-align: center;
+    background-color: rgba(70, 130, 180, 0.8);
+    padding-top: 6px;
+    color: #fff;
+}
+
+.footer_inner img {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+/*---topに戻るボタン---*/
+.to_top {
+    background-color: #284a66;
+    display: block;
+    text-align: center;
+    line-height: 80px;
+    width: 80px;
+    height: 80px;
+    font-size: 14px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.9;
+    /*固定する*/
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+}
+
+.to_top:hover {
+    opacity: 0.8;
+}
