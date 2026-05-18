@@ -1,0 +1,14 @@
+# dependencies
+node_modules
+
+# build output
+dist
+
+# logs
+*-debug.log*
+
+# editor / OS
+.DS_Store
+*.local
+
+/.claude/settings.local.json
